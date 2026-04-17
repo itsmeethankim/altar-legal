@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altar - Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 640px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; line-height: 1.7; background: #fafafa; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; }
+  p, li { font-size: 0.95rem; }
+  ul { padding-left: 1.25rem; }
+  a { color: #555; }
+  .back { display: inline-block; margin-bottom: 1.5rem; color: #888; text-decoration: none; font-size: 0.875rem; }
+  .back:hover { color: #000; }
+</style>
+</head>
+<body>
+<a class="back" href="../">&larr; Back</a>
+<h1>Privacy Policy</h1>
+<p><strong>Last updated:</strong> April 14, 2026</p>
+
+<p>Altar ("we", "our", "the app") is a Christian discipline app that intercepts distracting app use with Scripture, reflection, and prayer. This policy explains what information Altar collects, why, and your choices.</p>
+
+<h2>The short version</h2>
+<ul>
+  <li>Altar is designed to keep your data on your device whenever possible.</li>
+  <li>We do not sell your data. We do not track you across apps or the web. We do not run ads.</li>
+  <li>The only data that leaves your device is what you explicitly opt into backing up through cloud sync (Supabase) after signing in with Apple.</li>
+  <li>Your Screen Time app selections never leave your device.</li>
+</ul>
+
+<h2>What we collect</h2>
+
+<h3>On-device only (never leaves your phone)</h3>
+<ul>
+  <li>Your selected blocked apps (Screen Time / Family Controls data).</li>
+  <li>Draft reflections while you are composing them.</li>
+  <li>Cached Bible text and reading plan content bundled with the app.</li>
+</ul>
+
+<h3>Synced to our backend (only if cloud sync is enabled)</h3>
+<p>When you sign in with Apple and then turn on cloud sync in Settings, the following is stored under your account-backed Supabase user ID:</p>
+<ul>
+  <li>App settings (theme, unlock duration, strictness level, reminder time).</li>
+  <li>Intervention history (dates, which verse was shown, which action you took — read, reflection, prayer, quiet time, scan).</li>
+  <li>Reflection text you write.</li>
+  <li>OCR'd passage text from Scan to Unlock.</li>
+  <li>Reading plan progress.</li>
+</ul>
+
+<p>We do <strong>not</strong> sync:</p>
+<ul>
+  <li>Your real name, email, phone number, or any contact information.</li>
+  <li>Which specific apps you have blocked.</li>
+  <li>Photos, camera content, or location.</li>
+  <li>Your Apple password or payment details.</li>
+</ul>
+
+<h3>Purchase records</h3>
+<p>If you buy a subscription or lifetime access, Apple processes the transaction. Altar receives only an anonymous entitlement status (premium on/off) from Apple's StoreKit — we never see your payment details.</p>
+
+<h3>Bible Assistant (optional AI feature)</h3>
+<p>If you use the in-app Bible Assistant, your prompt and the relevant verse context are sent to our Supabase Edge Function over HTTPS. The Edge Function records only the fact that your signed-in account made a request (so we can rate-limit abuse); the prompt text is not stored server-side. The prompt and passage are then forwarded to OpenAI's API to generate a response. OpenAI sees the content of your question but does not see your real-world identity. Under OpenAI's standard API data-usage policy, prompts sent via the API are not used to train OpenAI's models. If the Edge Function is unavailable, Altar falls back to offline responses that never leave your device.</p>
+
+<h2>How we use your information</h2>
+<ul>
+  <li>To run the app's core features (interventions, streaks, reading plans).</li>
+  <li>To back up and restore your progress across your own signed-in devices if you enable cloud sync.</li>
+  <li>To improve the app's reliability by aggregating anonymous crash and error data (iOS system-level only — we do not run third-party analytics SDKs).</li>
+</ul>
+
+<h2>How we protect your information</h2>
+<ul>
+  <li>All network traffic uses HTTPS/TLS.</li>
+  <li>Supabase row-level security policies ensure only the signed-in user can read or modify their own rows.</li>
+  <li>On-device data is stored via Apple's SwiftData framework, encrypted by iOS at rest.</li>
+</ul>
+
+<h2>Your choices</h2>
+<ul>
+  <li><strong>Disable cloud sync</strong> at any time in Settings &rarr; Cloud &amp; AI. Your local data stays; nothing new is uploaded.</li>
+  <li><strong>Sign out of cloud sync</strong> in Settings &rarr; Cloud &amp; AI to disconnect this device from your account-backed backup.</li>
+  <li><strong>Delete your cloud data</strong> by emailing the address below. We will purge your Supabase records within 30 days.</li>
+  <li><strong>Revoke Screen Time access</strong> in iOS Settings &rarr; Screen Time &rarr; Family Controls. Altar will continue to work with a limited feature set.</li>
+  <li><strong>Revoke camera access</strong> in iOS Settings &rarr; Privacy &rarr; Camera. Scan to Unlock will be unavailable.</li>
+</ul>
+
+<h2>Children</h2>
+<p>Altar is not directed at children under 13 and does not knowingly collect information from them.</p>
+
+<h2>Third parties</h2>
+<ul>
+  <li><strong>Supabase</strong> (backend): hosts your synced data and our Edge Functions. See supabase.com/privacy.</li>
+  <li><strong>OpenAI</strong> (optional, via our Edge Function): processes Bible Assistant prompts if that feature is used. See openai.com/policies/privacy-policy.</li>
+  <li><strong>Apple</strong> (StoreKit): processes purchases.</li>
+</ul>
+
+<h2>Changes</h2>
+<p>We will update this policy as the app evolves. The "Last updated" date at the top reflects the most recent version.</p>
+
+<h2>Contact</h2>
+<p>Questions? Email <strong><a href="mailto:itsmeethankim2@gmail.com">itsmeethankim2@gmail.com</a></strong></p>
+</body>
+</html>
