@@ -19,17 +19,18 @@
 <body>
 <a class="back" href="../">&larr; Back</a>
 <h1>Privacy Policy</h1>
-<p><strong>Last updated:</strong> May 6, 2026</p>
+<p><strong>Last updated:</strong> May 7, 2026</p>
 
 <p>Altar ("we", "our", "the app") is a Christian discipline app that intercepts distracting app use with Scripture, reflection, and prayer. This policy explains what information Altar collects, why, and your choices.</p>
 
 <h2>The short version</h2>
 <ul>
-  <li>Altar is local-first. Your data stays on your device.</li>
+  <li>Altar is local-first. Your core data stays on your device.</li>
   <li>We do not sell your data. We do not track you across apps or the web. We do not run ads.</li>
-  <li>We do not ask for your name, email, phone number, or any contact information.</li>
+  <li>The core app does not require your name, email, phone number, or any contact information.</li>
   <li>Your Screen Time app selections never leave your device.</li>
-  <li>The Bible Assistant and Scan-to-Unlock features use an anonymous, device-bound session to talk to our backend &mdash; it has no link to your real-world identity.</li>
+  <li>The Bible Assistant feature uses an anonymous, device-bound session to talk to our backend &mdash; it has no link to your real-world identity.</li>
+  <li><strong>Altar Circles</strong> is an optional, opt-in community feature. If you choose to join a Circle, you sign in with Apple, and the check-ins, reactions, and photos you post are visible to invited members of that Circle.</li>
 </ul>
 
 <h2>What we collect</h2>
@@ -46,30 +47,43 @@
 <h3>Anonymous session identifier</h3>
 <p>On first launch, the app creates an anonymous session with our backend (Supabase). This session is a random identifier stored only on your device. It is <strong>not</strong> linked to your name, email, Apple ID, phone, or any other identifying information. We use it solely to:</p>
 <ul>
-  <li>Authenticate your requests to the Bible Assistant and Scan-to-Unlock features.</li>
-  <li>Apply per-user rate limits so the features remain affordable for everyone.</li>
+  <li>Authenticate your requests to the Bible Assistant feature.</li>
+  <li>Apply per-user rate limits so the feature remains affordable for everyone.</li>
 </ul>
 <p>If you reinstall the app, a brand-new anonymous identifier is generated. The old one is unrecoverable and unattributable.</p>
 
 <h3>Purchase records</h3>
-<p>If you buy a subscription, Apple processes the transaction. Altar receives only an anonymous entitlement status (Pro on/off) from Apple's StoreKit &mdash; we never see your payment details.</p>
+<p>If you buy a subscription, Apple processes the transaction. Altar receives only an anonymous entitlement status (premium on/off) from Apple's StoreKit &mdash; we never see your payment details.</p>
 
 <h3>Bible Assistant and Scan-to-Unlock (AI features)</h3>
-<p>If you use the in-app Bible Assistant or the Scan-to-Unlock devotional generator, your prompt or the OCR'd Scripture reference is sent to our Supabase Edge Function over HTTPS. The Edge Function records the timestamp of the request (so we can rate-limit abuse); the prompt text itself is not stored server-side. The prompt and passage are forwarded to OpenAI's API to generate a response. OpenAI does not see any identifying information about you. Under OpenAI's standard API data-usage policy, prompts sent via the API are not used to train OpenAI's models. If the Edge Function is unavailable, the Bible Assistant falls back to offline responses that never leave your device. AI processing is core to these features and is always enabled when you use them; you can avoid AI by simply not using the Bible Assistant or Scan-to-Unlock features.</p>
+<p>If you use the in-app Bible Assistant or the Scan-to-Unlock devotional generator, your prompt or the OCR'd Scripture reference is sent to our Supabase Edge Function over HTTPS. The Edge Function records the timestamp of the request (so we can rate-limit abuse); the prompt text itself is not stored server-side. The prompt and passage are forwarded to OpenAI's API to generate a response. OpenAI does not see any identifying information about you. Under OpenAI's standard API data-usage policy, prompts sent via the API are not used to train OpenAI's models. If the Edge Function is unavailable, the Bible Assistant falls back to offline responses that never leave your device. AI processing is core to these features and is always enabled when you use them; you can avoid AI by simply not using these features.</p>
+
+<h3>Altar Circles (optional community feature)</h3>
+<p>Altar Circles is an opt-in feature for invite-only accountability groups. It is off until you choose to use it. If you create or join a Circle, the following applies:</p>
+<ul>
+  <li><strong>Sign in with Apple is required.</strong> When you sign in, Apple shares an opaque user identifier with us, and &mdash; at your choice &mdash; your name and a relay email address. We use these only to identify you to other members of Circles you join (display name only), to maintain your authenticated session, and to honor Apple Guideline 5.1.1(v) account deletion ("Delete Account" in Settings).</li>
+  <li><strong>Email addresses are never shown to other members</strong> and are not used for marketing.</li>
+  <li><strong>What members of your Circle see:</strong> your display name, any check-in text or Scripture passage you post, any photo you attach, and your reactions ("Praying," "Amen," "Encouraged," "Keep Going") on their check-ins.</li>
+  <li><strong>What members do not see:</strong> your email, your Apple ID, your Screen Time selections, your other Circles, or any of your private reflections from the rest of the app.</li>
+  <li><strong>Reports and blocks:</strong> if you report a check-in, only Altar (the app, via automated rules and the Circle's RLS policies) sees the report &mdash; the author is not notified. Two distinct reports auto-hide a check-in pending review. If you block another user, neither of you can see the other's check-ins, reactions, or profile in any shared Circle. The blocked user is not notified.</li>
+  <li><strong>Retention:</strong> you can delete any check-in you authored at any time; this also removes the photo from storage. Leaving a Circle hides your historical content from that Circle. Disbanding a Circle (owner only) cascade-deletes every member's check-ins, reactions, and reports for that Circle. Deleting your account through Settings removes all of your check-ins, reactions, reports, profile row, and block list.</li>
+  <li><strong>No third-party sharing.</strong> Circle content stays on Altar's Supabase backend. It is not shared with OpenAI or any other third party.</li>
+</ul>
 
 <h3>What we do NOT collect</h3>
 <ul>
-  <li>Your real name, email address, phone number, or any contact information.</li>
-  <li>Your Apple ID or sign-in tokens.</li>
+  <li>Your real name, email address, phone number, or contact information unless you sign in with Apple to use Altar Circles.</li>
+  <li>Your Apple ID password or any sign-in token beyond the short-lived session Apple gives us during Sign in with Apple.</li>
   <li>Which specific apps you have blocked.</li>
-  <li>Photos, camera content, or location.</li>
-  <li>Any cross-device sync or cloud backup of your spiritual data.</li>
+  <li>Photos or camera content from outside Altar Circles. (Camera frames captured by Scan to Unlock are processed in-memory and not retained.)</li>
+  <li>Location.</li>
+  <li>Any cross-device sync or cloud backup of your private spiritual data unless you opt in to Cloud Sync.</li>
 </ul>
 
 <h2>How we use your information</h2>
 <ul>
   <li>To run the app's core features (interventions, streaks, reading plans).</li>
-  <li>To rate-limit the AI features fairly across users.</li>
+  <li>To rate-limit the AI Bible Assistant fairly across users.</li>
   <li>To improve the app's reliability by aggregating anonymous crash and error data (iOS system-level only &mdash; we do not run third-party analytics SDKs).</li>
 </ul>
 
@@ -89,7 +103,10 @@
   <li><strong>Reset all app data</strong> in Settings &rarr; Account &rarr; About &rarr; Reset All App Data. This erases every reflection, scan, and setting on this device.</li>
   <li><strong>Revoke Screen Time access</strong> in iOS Settings &rarr; Screen Time &rarr; Family Controls. Altar will continue to work with a limited feature set.</li>
   <li><strong>Revoke camera access</strong> in iOS Settings &rarr; Privacy &rarr; Camera. Scan to Unlock will be unavailable.</li>
-  <li><strong>Delete the app</strong> to remove all on-device data. Because we never collect cloud copies of your spiritual data, no further deletion request is needed &mdash; there is nothing else to delete.</li>
+  <li><strong>Leave or disband a Circle</strong> &mdash; leaving hides your content from that Circle; disbanding (owner only) deletes the Circle and all its content for everyone.</li>
+  <li><strong>Block another member</strong> in any Circle from the check-in card menu, or manage your block list in Settings &rarr; Account &rarr; Circles &rarr; Blocked Members.</li>
+  <li><strong>Delete your account</strong> in Settings &rarr; Account &rarr; Cloud &amp; AI &rarr; Delete Account. This permanently removes your Circles content, profile, block list, and authenticated session, then signs you out.</li>
+  <li><strong>Delete the app</strong> to remove all on-device data. If you have used Altar Circles, also use Delete Account first so your Circles content is removed from the server.</li>
 </ul>
 
 <h2>Children</h2>
@@ -97,9 +114,9 @@
 
 <h2>Third parties</h2>
 <ul>
-  <li><strong>Supabase</strong> (backend): hosts our Edge Function for the Bible Assistant and Scan-to-Unlock. Receives only the anonymous session identifier and request timestamps. See <a href="https://supabase.com/privacy">supabase.com/privacy</a>.</li>
+  <li><strong>Supabase</strong> (backend): hosts our Edge Function for the Bible Assistant and stores Altar Circles content (check-ins, reactions, reports, photos) for users who opt in to Circles. Receives only the anonymous session identifier and request timestamps for the Bible Assistant. For Circles, receives the Sign in with Apple-issued user identifier, your chosen display name, and the content you post. See <a href="https://supabase.com/privacy">supabase.com/privacy</a>.</li>
   <li><strong>OpenAI</strong> (via our Edge Function): processes Bible Assistant and Scan-to-Unlock devotional prompts when those features are used. Receives only the prompt content, not your identity. See <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a>.</li>
-  <li><strong>Apple</strong> (StoreKit): processes purchases.</li>
+  <li><strong>Apple</strong> (Sign in with Apple, StoreKit): handles authentication for Altar Circles and processes purchases. We receive only the opaque Apple user identifier and, if you choose to share them, a relay email and your chosen name.</li>
 </ul>
 
 <h2>Changes</h2>
