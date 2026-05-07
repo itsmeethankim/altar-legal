@@ -19,7 +19,7 @@
 <body>
 <a class="back" href="../">&larr; Back</a>
 <h1>Privacy Policy</h1>
-<p><strong>Last updated:</strong> April 29, 2026</p>
+<p><strong>Last updated:</strong> May 6, 2026</p>
 
 <p>Altar ("we", "our", "the app") is a Christian discipline app that intercepts distracting app use with Scripture, reflection, and prayer. This policy explains what information Altar collects, why, and your choices.</p>
 
@@ -29,7 +29,7 @@
   <li>We do not sell your data. We do not track you across apps or the web. We do not run ads.</li>
   <li>We do not ask for your name, email, phone number, or any contact information.</li>
   <li>Your Screen Time app selections never leave your device.</li>
-  <li>The Bible Assistant feature uses an anonymous, device-bound session to talk to our backend &mdash; it has no link to your real-world identity.</li>
+  <li>The Bible Assistant and Scan-to-Unlock features use an anonymous, device-bound session to talk to our backend &mdash; it has no link to your real-world identity.</li>
 </ul>
 
 <h2>What we collect</h2>
@@ -46,16 +46,16 @@
 <h3>Anonymous session identifier</h3>
 <p>On first launch, the app creates an anonymous session with our backend (Supabase). This session is a random identifier stored only on your device. It is <strong>not</strong> linked to your name, email, Apple ID, phone, or any other identifying information. We use it solely to:</p>
 <ul>
-  <li>Authenticate your requests to the Bible Assistant feature.</li>
-  <li>Apply per-user rate limits so the feature remains affordable for everyone.</li>
+  <li>Authenticate your requests to the Bible Assistant and Scan-to-Unlock features.</li>
+  <li>Apply per-user rate limits so the features remain affordable for everyone.</li>
 </ul>
 <p>If you reinstall the app, a brand-new anonymous identifier is generated. The old one is unrecoverable and unattributable.</p>
 
 <h3>Purchase records</h3>
-<p>If you buy a subscription, Apple processes the transaction. Altar receives only an anonymous entitlement status (premium on/off) from Apple's StoreKit &mdash; we never see your payment details.</p>
+<p>If you buy a subscription, Apple processes the transaction. Altar receives only an anonymous entitlement status (Pro on/off) from Apple's StoreKit &mdash; we never see your payment details.</p>
 
-<h3>Bible Assistant (optional AI feature)</h3>
-<p>If you use the in-app Bible Assistant, your prompt and the relevant verse context are sent to our Supabase Edge Function over HTTPS. The Edge Function records the timestamp of the request (so we can rate-limit abuse); the prompt text itself is not stored server-side. The prompt and passage are forwarded to OpenAI's API to generate a response. OpenAI does not see any identifying information about you. Under OpenAI's standard API data-usage policy, prompts sent via the API are not used to train OpenAI's models. If the Edge Function is unavailable, Altar falls back to offline responses that never leave your device.</p>
+<h3>Bible Assistant and Scan-to-Unlock (AI features)</h3>
+<p>If you use the in-app Bible Assistant or the Scan-to-Unlock devotional generator, your prompt or the OCR'd Scripture reference is sent to our Supabase Edge Function over HTTPS. The Edge Function records the timestamp of the request (so we can rate-limit abuse); the prompt text itself is not stored server-side. The prompt and passage are forwarded to OpenAI's API to generate a response. OpenAI does not see any identifying information about you. Under OpenAI's standard API data-usage policy, prompts sent via the API are not used to train OpenAI's models. If the Edge Function is unavailable, the Bible Assistant falls back to offline responses that never leave your device. AI processing is core to these features and is always enabled when you use them; you can avoid AI by simply not using the Bible Assistant or Scan-to-Unlock features.</p>
 
 <h3>What we do NOT collect</h3>
 <ul>
@@ -69,7 +69,7 @@
 <h2>How we use your information</h2>
 <ul>
   <li>To run the app's core features (interventions, streaks, reading plans).</li>
-  <li>To rate-limit the AI Bible Assistant fairly across users.</li>
+  <li>To rate-limit the AI features fairly across users.</li>
   <li>To improve the app's reliability by aggregating anonymous crash and error data (iOS system-level only &mdash; we do not run third-party analytics SDKs).</li>
 </ul>
 
@@ -97,8 +97,8 @@
 
 <h2>Third parties</h2>
 <ul>
-  <li><strong>Supabase</strong> (backend): hosts our Edge Function for the Bible Assistant. Receives only the anonymous session identifier and request timestamps. See <a href="https://supabase.com/privacy">supabase.com/privacy</a>.</li>
-  <li><strong>OpenAI</strong> (optional, via our Edge Function): processes Bible Assistant prompts if that feature is used. Receives only the prompt content, not your identity. See <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a>.</li>
+  <li><strong>Supabase</strong> (backend): hosts our Edge Function for the Bible Assistant and Scan-to-Unlock. Receives only the anonymous session identifier and request timestamps. See <a href="https://supabase.com/privacy">supabase.com/privacy</a>.</li>
+  <li><strong>OpenAI</strong> (via our Edge Function): processes Bible Assistant and Scan-to-Unlock devotional prompts when those features are used. Receives only the prompt content, not your identity. See <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a>.</li>
   <li><strong>Apple</strong> (StoreKit): processes purchases.</li>
 </ul>
 
