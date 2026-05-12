@@ -19,7 +19,7 @@
 <body>
 <a class="back" href="../">&larr; Back</a>
 <h1>Privacy Policy</h1>
-<p><strong>Last updated:</strong> May 7, 2026</p>
+<p><strong>Last updated:</strong> May 12, 2026</p>
 
 <p>Altar ("we", "our", "the app") is a Christian discipline app that intercepts distracting app use with Scripture, reflection, and prayer. This policy explains what information Altar collects, why, and your choices.</p>
 
@@ -27,10 +27,10 @@
 <ul>
   <li>Altar is local-first. Your core data stays on your device.</li>
   <li>We do not sell your data. We do not track you across apps or the web. We do not run ads.</li>
-  <li>The core app does not require your name, email, phone number, or any contact information.</li>
+  <li>The free tier does not require your name, email, phone number, or any contact information.</li>
   <li>Your Screen Time app selections never leave your device.</li>
-  <li>The Bible Assistant feature uses an anonymous, device-bound session to talk to our backend &mdash; it has no link to your real-world identity.</li>
-  <li><strong>Altar Circles</strong> is an optional, opt-in community feature. If you choose to join a Circle, you sign in with Apple, and the check-ins, reactions, and photos you post are visible to invited members of that Circle.</li>
+  <li><strong>The Bible Assistant</strong> is part of Altar Pro and requires Sign in with Apple. Apple gives us an opaque per-app identifier (a random UUID) &mdash; we never see your real name, email, or Apple ID. We use it to verify your subscription and apply rate limits.</li>
+  <li><strong>Altar Circles</strong> is an optional, opt-in community feature for Altar Pro members. If you choose to join a Circle, you sign in with Apple, and the check-ins, reactions, and photos you post are visible to invited members of that Circle.</li>
 </ul>
 
 <h2>What we collect</h2>
@@ -44,19 +44,26 @@
   <li>OCR'd passage text from Scan to Unlock.</li>
 </ul>
 
-<h3>Anonymous session identifier</h3>
-<p>On first launch, the app creates an anonymous session with our backend (Supabase). This session is a random identifier stored only on your device. It is <strong>not</strong> linked to your name, email, Apple ID, phone, or any other identifying information. We use it solely to:</p>
+<h3>Sign in with Apple identifier</h3>
+<p>The Bible Assistant and Altar Circles require Sign in with Apple. When you sign in, Apple gives us an opaque user identifier (a random UUID specific to this app and your Apple ID), and &mdash; at your choice &mdash; your name and a relay email address. We use these only to:</p>
 <ul>
-  <li>Authenticate your requests to the Bible Assistant feature.</li>
-  <li>Apply per-user rate limits so the feature remains affordable for everyone.</li>
+  <li>Verify your active Altar Pro subscription before granting access to Pro features.</li>
+  <li>Apply per-user rate limits to the Bible Assistant so the feature stays affordable.</li>
+  <li>Identify you to other members of any Circle you join (display name only).</li>
+  <li>Maintain your authenticated session.</li>
+  <li>Honor Apple Guideline 5.1.1(v) account deletion (Settings &rarr; Delete Account).</li>
 </ul>
-<p>If you reinstall the app, a brand-new anonymous identifier is generated. The old one is unrecoverable and unattributable.</p>
+<p>We never see your Apple ID, your Apple ID password, or any contact information beyond the relay email you choose to share. Email addresses are never shown to other members and are never used for marketing.</p>
+
+<h3>Anonymous baseline session</h3>
+<p>Before you've signed in with Apple, the app may create an anonymous Supabase session for connectivity. The anonymous session does not store identifying information and cannot be used to access the Bible Assistant or Altar Circles &mdash; those features explicitly require Sign in with Apple. If you reinstall the app, any prior anonymous session is unrecoverable.</p>
 
 <h3>Purchase records</h3>
 <p>If you buy a subscription, Apple processes the transaction. Altar receives only an anonymous entitlement status (premium on/off) from Apple's StoreKit &mdash; we never see your payment details.</p>
 
 <h3>Bible Assistant and Scan-to-Unlock (AI features)</h3>
-<p>If you use the in-app Bible Assistant or the Scan-to-Unlock devotional generator, your prompt or the OCR'd Scripture reference is sent to our Supabase Edge Function over HTTPS. The Edge Function records the timestamp of the request (so we can rate-limit abuse); the prompt text itself is not stored server-side. The prompt and passage are forwarded to OpenAI's API to generate a response. OpenAI does not see any identifying information about you. Under OpenAI's standard API data-usage policy, prompts sent via the API are not used to train OpenAI's models. If the Edge Function is unavailable, the Bible Assistant falls back to offline responses that never leave your device. AI processing is core to these features and is always enabled when you use them; you can avoid AI by simply not using these features.</p>
+<p>The Bible Assistant and the Scan-to-Unlock devotional generator are Altar Pro features. They require Sign in with Apple and an active Altar Pro subscription to use.</p>
+<p>When you use them, your prompt or the OCR'd Scripture reference is sent to our Supabase Edge Function over HTTPS. The Edge Function uses your Apple-issued opaque identifier to verify your active Pro entitlement and apply per-user rate limits. It records the timestamp of the request (so we can rate-limit abuse); the prompt text itself is not stored server-side. The prompt and passage are forwarded to OpenAI's API to generate a response. OpenAI does not see any identifying information about you. Under OpenAI's standard API data-usage policy, prompts sent via the API are not used to train OpenAI's models. If the Edge Function is unavailable, the Bible Assistant falls back to offline responses that never leave your device. AI processing is core to these features and is always enabled when you use them; you can avoid AI by simply not using these features.</p>
 
 <h3>Altar Circles (optional community feature)</h3>
 <p>Altar Circles is an opt-in feature for invite-only accountability groups. It is off until you choose to use it. If you create or join a Circle, the following applies:</p>
@@ -83,15 +90,16 @@
 <h2>How we use your information</h2>
 <ul>
   <li>To run the app's core features (interventions, streaks, reading plans).</li>
-  <li>To rate-limit the AI Bible Assistant fairly across users.</li>
+  <li>To verify your Altar Pro subscription before granting access to Pro features (Bible Assistant, Altar Circles).</li>
+  <li>To rate-limit the AI Bible Assistant fairly across paying users (per-Apple-identifier and per-IP).</li>
   <li>To improve the app's reliability by aggregating anonymous crash and error data (iOS system-level only &mdash; we do not run third-party analytics SDKs).</li>
 </ul>
 
 <h2>How we protect your information</h2>
 <ul>
   <li>All network traffic uses HTTPS/TLS.</li>
-  <li>The anonymous session identifier carries no link to your identity.</li>
-  <li>Per-IP and per-anonymous-user rate limits prevent abuse of the AI backend.</li>
+  <li>The Apple-issued user identifier we use for backend auth is opaque and does not contain your name or email.</li>
+  <li>Per-IP and per-user rate limits prevent abuse of the AI backend.</li>
   <li>On-device data is stored via Apple's SwiftData framework, encrypted by iOS at rest.</li>
 </ul>
 
@@ -114,9 +122,10 @@
 
 <h2>Third parties</h2>
 <ul>
-  <li><strong>Supabase</strong> (backend): hosts our Edge Function for the Bible Assistant and stores Altar Circles content (check-ins, reactions, reports, photos) for users who opt in to Circles. Receives only the anonymous session identifier and request timestamps for the Bible Assistant. For Circles, receives the Sign in with Apple-issued user identifier, your chosen display name, and the content you post. See <a href="https://supabase.com/privacy">supabase.com/privacy</a>.</li>
+  <li><strong>Supabase</strong> (backend): hosts our Edge Functions (Bible Assistant, entitlement verification, push fan-out for Circles) and stores Altar Circles content (check-ins, reactions, reports, photos) for users who opt in. Receives your Apple-issued opaque user identifier and request timestamps whenever you use an Altar Pro server feature. For Circles, additionally receives your chosen display name and the content you post. See <a href="https://supabase.com/privacy">supabase.com/privacy</a>.</li>
   <li><strong>OpenAI</strong> (via our Edge Function): processes Bible Assistant and Scan-to-Unlock devotional prompts when those features are used. Receives only the prompt content, not your identity. See <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a>.</li>
-  <li><strong>Apple</strong> (Sign in with Apple, StoreKit): handles authentication for Altar Circles and processes purchases. We receive only the opaque Apple user identifier and, if you choose to share them, a relay email and your chosen name.</li>
+  <li><strong>RevenueCat</strong> (subscription state): receives your Apple-issued opaque user identifier so we can verify your active Altar Pro subscription on the backend. Does not see your name, email, or Apple ID password. See <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</li>
+  <li><strong>Apple</strong> (Sign in with Apple, StoreKit): handles authentication for Altar Pro features (Bible Assistant, Circles) and processes purchases. We receive only the opaque Apple user identifier and, if you choose to share them, a relay email and your chosen name.</li>
 </ul>
 
 <h2>Changes</h2>
