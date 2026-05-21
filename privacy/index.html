@@ -19,7 +19,7 @@
 <body>
 <a class="back" href="../">&larr; Back</a>
 <h1>Privacy Policy</h1>
-<p><strong>Last updated:</strong> May 20, 2026</p>
+<p><strong>Last updated:</strong> May 21, 2026</p>
 
 <p>Altar ("we", "our", "the app") is a Christian discipline app that intercepts distracting app use with Scripture, reflection, and prayer. This policy explains what information Altar collects, why, and your choices.</p>
 
@@ -94,6 +94,15 @@
   <li>To verify your Altar Pro subscription before granting access to Pro features (Bible Assistant, expanded Altar Circles seats and hosting), and to enforce the free-tier limits (one hosted Circle with up to two members) without requiring payment.</li>
   <li>To rate-limit the AI Bible Assistant fairly across paying users (per-Apple-identifier and per-IP).</li>
   <li>To improve the app's reliability by aggregating anonymous crash and error data (iOS system-level only &mdash; we do not run third-party analytics SDKs).</li>
+</ul>
+
+<h3>Optional product analytics (opt-in)</h3>
+<p>In <em>Settings &rarr; Cloud &amp; AI &rarr; "Help improve Altar"</em> you can choose to share pseudonymous product-usage events &mdash; for example: a paywall was viewed, an intervention was completed, an exit-survey reason was selected &mdash; with our own Supabase backend. This is <strong>off by default</strong> and only takes effect once you have signed in with Apple; anonymous sessions never send these events.</p>
+<ul>
+  <li>We never send the text of your reflections, prayers, scans, journal entries, or Circle posts through this channel.</li>
+  <li>Events are stored against your Apple-issued opaque identifier (the same UUID we already use for entitlements), not your name or email.</li>
+  <li>Events older than 90 days are purged.</li>
+  <li>You can turn this off at any time. Turning it off stops new events immediately. To remove your previously-recorded events, use <em>Settings &rarr; Account &rarr; Delete Account</em>, which cascades to every server-side row tied to your identifier.</li>
 </ul>
 
 <h2>How we protect your information</h2>
