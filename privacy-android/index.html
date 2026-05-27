@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altar for Android - Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 640px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; line-height: 1.7; background: #fafafa; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; }
+  p, li { font-size: 0.95rem; }
+  ul { padding-left: 1.25rem; }
+  a { color: #555; }
+  table { border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; width: 100%; }
+  th, td { border-bottom: 1px solid #ddd; padding: 0.5rem 0.6rem; text-align: left; vertical-align: top; }
+  th { background: #f0f0f0; font-weight: 600; }
+  code { background: #f0f0f0; padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.85em; }
+  .back { display: inline-block; margin-bottom: 1.5rem; color: #888; text-decoration: none; font-size: 0.875rem; }
+  .back:hover { color: #000; }
+  .note { background: #fff8e6; border-left: 3px solid #d4a017; padding: 0.75rem 1rem; margin: 1rem 0; font-size: 0.9rem; border-radius: 3px; }
+</style>
+</head>
+<body>
+<a class="back" href="../">&larr; Back</a>
+<h1>Privacy Policy &mdash; Altar for Android</h1>
+<p><strong>Last updated:</strong> May 27, 2026</p>
+
+<p>Altar is a Christian app that helps you replace digital impulses with Scripture-grounded moments. We built it with a single principle: <strong>your spiritual practice is yours, and we collect only what's needed to make the app work.</strong></p>
+
+<p>This page applies to the Altar Android app (<code>com.altarapp.android</code>). For the iOS app, see the <a href="../privacy/">main Altar privacy policy</a>.</p>
+
+<h2>Who runs Altar</h2>
+<p>Altar is built and operated by an individual developer. For questions about this policy, email <a href="mailto:thealtarapp@gmail.com">thealtarapp@gmail.com</a>.</p>
+
+<h2>What we collect and why</h2>
+
+<h3>Account data</h3>
+<ul>
+  <li><strong>Anonymous user ID</strong> &mdash; when you first open Altar, we create an anonymous account in our database (Supabase) so your settings and progress can sync across devices. You don't need to provide an email to use the app.</li>
+  <li><strong>Email + display name</strong> &mdash; only if you choose to <strong>Sign in with Google</strong> to use Altar Circles (small-group features). We use your email solely to authenticate you and to scope what content belongs to you. We never email you marketing.</li>
+</ul>
+
+<h3>App activity (only what powers in-app features)</h3>
+<ul>
+  <li><strong>Scan records</strong> &mdash; when you use Scan-to-Unlock, the Bible passage you scanned and the reflection you wrote are stored so you can revisit them later and so streaks/stats work. Scanned page images are processed on-device by Google ML Kit and are <strong>not</strong> uploaded.</li>
+  <li><strong>Intervention records</strong> &mdash; each time the Shield screen appears (because you tried to open a guarded app), we record the timestamp and the verse shown. This powers your streak count and Home stats.</li>
+  <li><strong>Reading-plan progress</strong> &mdash; which devotionals you've completed.</li>
+  <li><strong>Reflections</strong> &mdash; the text you write during intervention prompts or Quiet Time. Stored under your account so the app can show them back to you.</li>
+  <li><strong>Circle activity</strong> &mdash; if you join an Altar Circle, your check-ins, reactions, and messages are visible to other members of that Circle. They are stored on our servers so the Circle can function.</li>
+  <li><strong>Subscription status</strong> &mdash; Altar Pro entitlement is managed by RevenueCat. We store the entitlement state (free or pro), not your payment details.</li>
+</ul>
+
+<h3>Device &amp; technical data</h3>
+<ul>
+  <li><strong>FCM push token</strong> &mdash; a device-specific token from Firebase Cloud Messaging, used solely to deliver Altar notifications (Circle check-in reminders, daily prayer time, etc.). The token is stored against your anonymous user ID and rotated by the OS.</li>
+  <li><strong>Crash diagnostics</strong> &mdash; if the app crashes, we may receive an anonymous crash report (no personal content). This is opt-in via standard Android settings and contains no Scripture, reflection, or Circle content.</li>
+</ul>
+
+<h3>What stays only on your device</h3>
+<ul>
+  <li><strong>The list of apps you've chosen to "guard"</strong> &mdash; your selection of which apps trigger the Altar Shield is stored locally in Android <code>DataStore</code> and <strong>is never uploaded</strong> to our servers.</li>
+  <li><strong>Your Accessibility Service permission state</strong> &mdash; the OS owns this; Altar never reads, transmits, or stores screen contents or any data from other apps.</li>
+</ul>
+
+<h2>How we use Accessibility Service</h2>
+
+<div class="note">
+  <strong>Android requires us to disclose this clearly.</strong>
+</div>
+
+<p><strong>Altar's Accessibility Service is used for one purpose only:</strong> to detect when an app <em>you</em> have chosen to guard comes to the foreground, so Altar can show the Shield screen with Scripture and a reflection prompt.</p>
+
+<p>We do <strong>not</strong>:</p>
+<ul>
+  <li>Read screen contents of any app</li>
+  <li>Capture, transmit, or store text from any app</li>
+  <li>Perform automated UI actions in other apps</li>
+  <li>Use Accessibility data for any analytics, advertising, or profiling</li>
+</ul>
+
+<p>The Accessibility permission can be revoked at any time via <em>Android Settings &rarr; Accessibility</em>. When revoked, the Shield will simply stop appearing.</p>
+
+<h2>Who we share data with</h2>
+
+<p>We do not sell your data. We share it only with the service providers required to run the app:</p>
+
+<table>
+  <thead><tr><th>Provider</th><th>What they receive</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Supabase</strong> (PostgreSQL hosting)</td><td>Anonymous user ID, scan/reflection/intervention/Circle data, email if you signed in with Google</td><td>Stores your account state. Hosted in the US.</td></tr>
+    <tr><td><strong>Firebase Cloud Messaging</strong> (Google)</td><td>Your FCM device token, notification payload (verse text + Circle activity copy)</td><td>Delivers push notifications.</td></tr>
+    <tr><td><strong>RevenueCat</strong></td><td>Your anonymous user ID, your Google Play subscription entitlement state</td><td>Manages your Altar Pro subscription.</td></tr>
+    <tr><td><strong>Google Play Billing</strong></td><td>Your Google account + payment info (handled by Google, not us)</td><td>Processes subscription purchases.</td></tr>
+    <tr><td><strong>OpenAI</strong> (Bible Assistant only)</td><td>The text of your question to the Bible Assistant, if you use that feature. We do not send your account ID.</td><td>Powers the AI Bible Assistant responses.</td></tr>
+  </tbody>
+</table>
+
+<p>We do not use third-party advertising, analytics SDKs (other than Firebase Crashlytics-style crash reporting), or social media trackers.</p>
+
+<h2>Your rights</h2>
+<ul>
+  <li><strong>Delete your account</strong> &mdash; Settings &rarr; Account &rarr; Delete my account. This permanently removes your anonymous account, scan history, intervention records, reflections, and Circle membership from our database. Local device data is wiped on next launch.</li>
+  <li><strong>Export your data</strong> &mdash; email <a href="mailto:thealtarapp@gmail.com">thealtarapp@gmail.com</a> with the request and we'll provide a JSON export within 30 days.</li>
+  <li><strong>Revoke specific permissions</strong> at any time via Android Settings (Notifications, Camera, Accessibility, etc.).</li>
+</ul>
+
+<h2>Children</h2>
+<p>Altar is not directed at children under 13. We do not knowingly collect personal data from children under 13. If you believe a child has provided data, please email us and we will delete it.</p>
+
+<h2>Changes</h2>
+<p>If we materially change this policy, we will update the "Last updated" date and surface a notice in the app on next launch.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:thealtarapp@gmail.com">thealtarapp@gmail.com</a></p>
+
+</body>
+</html>
