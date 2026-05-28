@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Altar for Android - Delete your account</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 640px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; line-height: 1.7; background: #fafafa; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; }
+  p, li { font-size: 0.95rem; }
+  ul, ol { padding-left: 1.25rem; }
+  a { color: #555; }
+  ol li { margin-bottom: 0.4rem; }
+  .back { display: inline-block; margin-bottom: 1.5rem; color: #888; text-decoration: none; font-size: 0.875rem; }
+  .back:hover { color: #000; }
+  table { border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; width: 100%; }
+  th, td { border-bottom: 1px solid #ddd; padding: 0.5rem 0.6rem; text-align: left; vertical-align: top; }
+  th { background: #f0f0f0; font-weight: 600; }
+  .primary { background: #fff; border: 1px solid #d0d0d0; border-radius: 4px; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+  .primary h2 { margin-top: 0; }
+  .fallback { background: #f3f3f3; border-radius: 4px; padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a class="back" href="../">&larr; Back</a>
+<h1>Delete your Altar account &mdash; Android</h1>
+<p><strong>Last updated:</strong> May 27, 2026</p>
+
+<p>This page explains how to delete your Altar account (Android app, <code>com.altarapp.android</code>) and what happens to your data when you do.</p>
+
+<div class="primary">
+<h2>Option 1 &mdash; Delete from inside the app (recommended)</h2>
+<ol>
+  <li>Open the <strong>Altar</strong> app on your Android device.</li>
+  <li>Tap the <strong>gear icon</strong> (top right of the Home screen) to open Settings.</li>
+  <li>Scroll to the <strong>Settings</strong> section &rarr; tap <strong>Account</strong>.</li>
+  <li>Scroll to the bottom of the Account screen &rarr; tap <strong>Delete my account</strong>.</li>
+  <li>Confirm in the dialog. Deletion is immediate.</li>
+</ol>
+<p>You don't need to be signed in to delete your account &mdash; if you've never signed in, the in-app deletion still removes everything stored under your anonymous user ID.</p>
+</div>
+
+<div class="fallback">
+<h2 style="margin-top:0">Option 2 &mdash; Request by email</h2>
+<p>If you've uninstalled the app or can't access it, email us at <a href="mailto:thealtarapp@gmail.com">thealtarapp@gmail.com</a> with the subject line <strong>"Delete my Altar Android account"</strong>. Include any of the following you have access to so we can locate your account:</p>
+<ul>
+  <li>The Google email you used to sign in (if you used Altar Circles)</li>
+  <li>Your Altar Circles display name (if applicable)</li>
+  <li>Approximate first install date</li>
+</ul>
+<p>We will action the request and confirm completion within <strong>30 days</strong>, and typically within 72 hours.</p>
+</div>
+
+<h2>What is deleted</h2>
+<table>
+  <thead><tr><th>Data type</th><th>Deleted?</th><th>Retention after deletion request</th></tr></thead>
+  <tbody>
+    <tr><td>Your account row (anonymous user ID, optional email/display name)</td><td>Yes</td><td>0 days &mdash; deleted immediately</td></tr>
+    <tr><td>Reflections (intervention prompts, Quiet Time, Scan-to-Unlock)</td><td>Yes</td><td>0 days</td></tr>
+    <tr><td>Intervention records (timestamps, verse shown)</td><td>Yes</td><td>0 days</td></tr>
+    <tr><td>Scan records (passage + your reflection)</td><td>Yes</td><td>0 days</td></tr>
+    <tr><td>Reading-plan progress</td><td>Yes</td><td>0 days</td></tr>
+    <tr><td>Altar Circles &mdash; your check-ins, reactions, reports, profile row, block list</td><td>Yes</td><td>0 days &mdash; cascade-deleted from every Circle you were in</td></tr>
+    <tr><td>FCM push token</td><td>Yes</td><td>0 days &mdash; revoked from our backend; OS may keep a local token until next launch of another FCM app</td></tr>
+    <tr><td>Local device data (cached Bible text, guarded-apps list in DataStore, settings)</td><td>Yes</td><td>Removed when you uninstall the app, or wiped on next launch if account deletion was triggered in-app</td></tr>
+  </tbody>
+</table>
+
+<h2>What is kept (and why)</h2>
+<table>
+  <thead><tr><th>Data type</th><th>Why kept</th><th>Retention</th></tr></thead>
+  <tbody>
+    <tr><td>Anonymized crash diagnostics (if you opted in)</td><td>For diagnosing stability issues. Cannot be re-linked to your account once deletion runs &mdash; the user ID is removed from the crash report.</td><td>90 days, then permanently deleted</td></tr>
+    <tr><td>Google Play subscription record (held by Google, not us)</td><td>Required for tax + Play Console refund handling. <strong>This is not data Altar stores</strong> &mdash; it is owned by Google. Cancel via Google Play if you want subscription billing to stop. Cancellation is independent of account deletion.</td><td>Per Google Play's policy</td></tr>
+    <tr><td>Aggregate analytics counters (e.g. "N total interventions across all users last week")</td><td>Stored without your user ID; cannot be traced back to you.</td><td>Indefinite, but un-linkable</td></tr>
+  </tbody>
+</table>
+
+<h2>Subscriptions and refunds</h2>
+<p>Deleting your Altar account does <strong>not</strong> automatically cancel a Google Play subscription. To cancel an active Altar Pro subscription:</p>
+<ol>
+  <li>Open the Google Play Store app.</li>
+  <li>Tap your profile (top right) &rarr; <strong>Payments &amp; subscriptions</strong> &rarr; <strong>Subscriptions</strong>.</li>
+  <li>Tap <strong>Altar</strong> &rarr; <strong>Cancel subscription</strong>.</li>
+</ol>
+<p>You can cancel before <em>and</em> after deleting your account. For refund eligibility, see <a href="https://support.google.com/googleplay/answer/2479637">Google Play's refund policy</a>.</p>
+
+<h2>About the data</h2>
+<p>For the full list of what Altar collects and why, see our <a href="../privacy-android/">Privacy Policy (Android)</a>.</p>
+
+<h2>Contact</h2>
+<p>Questions or problems with deletion: <a href="mailto:thealtarapp@gmail.com">thealtarapp@gmail.com</a>.</p>
+
+</body>
+</html>
