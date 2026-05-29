@@ -24,7 +24,7 @@
 <body>
 <a class="back" href="../">&larr; Back</a>
 <h1>Privacy Policy &mdash; Altar for Android</h1>
-<p><strong>Last updated:</strong> May 27, 2026</p>
+<p><strong>Last updated:</strong> May 28, 2026</p>
 
 <p>Altar is a Christian app that helps you replace digital impulses with Scripture-grounded moments. We built it with a single principle: <strong>your spiritual practice is yours, and we collect only what's needed to make the app work.</strong></p>
 
@@ -48,6 +48,7 @@
   <li><strong>Reading-plan progress</strong> &mdash; which devotionals you've completed.</li>
   <li><strong>Reflections</strong> &mdash; the text you write during intervention prompts or Quiet Time. Stored under your account so the app can show them back to you.</li>
   <li><strong>Circle activity</strong> &mdash; if you join an Altar Circle, your check-ins, reactions, and messages are visible to other members of that Circle. They are stored on our servers so the Circle can function.</li>
+  <li><strong>Circle photos (QT Moments)</strong> &mdash; if you choose to capture a "QT Moment" in an Altar Circle, the photo you take is uploaded and stored so it can be shared with the other members of that Circle. Photos are kept in a <strong>private</strong> storage bucket (Supabase Storage); they are never public and are never shared with any third party. Your Circle members can view a QT Moment only through a short-lived (15-minute) signed link. This is the <strong>only</strong> feature that uploads a photo, it happens <strong>only</strong> when you explicitly capture and post a QT Moment, and ordinary text check-ins never attach or upload a photo. You can remove a photo at any time by deleting the check-in, or remove all of your photos by deleting your account (Settings &rarr; Account &rarr; Delete my account).</li>
   <li><strong>Subscription status</strong> &mdash; Altar Pro entitlement is managed by RevenueCat. We store the entitlement state (free or pro), not your payment details.</li>
 </ul>
 
@@ -88,7 +89,7 @@
 <table>
   <thead><tr><th>Provider</th><th>What they receive</th><th>Why</th></tr></thead>
   <tbody>
-    <tr><td><strong>Supabase</strong> (PostgreSQL hosting)</td><td>Anonymous user ID, scan/reflection/intervention/Circle data, email if you signed in with Google</td><td>Stores your account state. Hosted in the US.</td></tr>
+    <tr><td><strong>Supabase</strong> (PostgreSQL + private file storage, hosting)</td><td>Anonymous user ID, scan/reflection/intervention/Circle data, Circle QT Moment photos (private bucket), email if you signed in with Google</td><td>Stores your account state and Circle photos. Hosted in the US.</td></tr>
     <tr><td><strong>Firebase Cloud Messaging</strong> (Google)</td><td>Your FCM device token, notification payload (verse text + Circle activity copy)</td><td>Delivers push notifications.</td></tr>
     <tr><td><strong>RevenueCat</strong></td><td>Your anonymous user ID, your Google Play subscription entitlement state</td><td>Manages your Altar Pro subscription.</td></tr>
     <tr><td><strong>Google Play Billing</strong></td><td>Your Google account + payment info (handled by Google, not us)</td><td>Processes subscription purchases.</td></tr>
@@ -100,7 +101,7 @@
 
 <h2>Your rights</h2>
 <ul>
-  <li><strong>Delete your account</strong> &mdash; Settings &rarr; Account &rarr; Delete my account. This permanently removes your anonymous account, scan history, intervention records, reflections, and Circle membership from our database. Local device data is wiped on next launch.</li>
+  <li><strong>Delete your account</strong> &mdash; Settings &rarr; Account &rarr; Delete my account. This permanently removes your anonymous account, scan history, intervention records, reflections, Circle membership, and any Circle QT Moment photos you uploaded from our database and storage. Local device data is wiped on next launch.</li>
   <li><strong>Export your data</strong> &mdash; email <a href="mailto:thealtarapp@gmail.com">thealtarapp@gmail.com</a> with the request and we'll provide a JSON export within 30 days.</li>
   <li><strong>Revoke specific permissions</strong> at any time via Android Settings (Notifications, Camera, Accessibility, etc.).</li>
 </ul>
