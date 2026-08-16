@@ -3,26 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Altar - Legal</title>
+<title>BeBible — Legal</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 640px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; line-height: 1.6; background: #fafafa; }
-  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
-  a { color: #555; text-decoration: none; border-bottom: 1px solid #ccc; }
-  a:hover { color: #000; border-color: #000; }
-  .links { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; }
-  .subtle { color: #888; font-size: 0.875rem; margin-top: 3rem; }
+  :root { --bg:#ffffff; --fg:#101010; --muted:#4a4a4a; --rule:rgba(0,0,0,0.12); --accent:#8a6d00; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#000000; --fg:#ffffff; --muted:rgba(255,255,255,0.66);
+            --rule:rgba(255,255,255,0.14); --accent:#F0D459; }
+  }
+  * { box-sizing: border-box; }
+  body { background:var(--bg); color:var(--fg); max-width:640px; margin:0 auto;
+         padding:48px 20px 80px; line-height:1.62;
+         font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif; }
+  .eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:12px;
+             font-weight:700; color:var(--muted); margin:0 0 8px; }
+  h1 { font-size:2rem; letter-spacing:-.03em; margin:0 0 8px; font-weight:800; }
+  h2 { font-size:1rem; margin:36px 0 10px; font-weight:700;
+       padding-top:20px; border-top:1px solid var(--rule); }
+  p { margin:8px 0 0; }
+  a { color:var(--accent); font-weight:600; }
+  ul { list-style:none; padding:0; margin:10px 0 0; }
+  li { margin:10px 0; }
+  .subtle { color:var(--muted); font-size:.9rem; margin-top:40px; }
 </style>
 </head>
 <body>
-  <h1>Altar</h1>
-  <p>A Christian discipline app that intercepts distracting app use with Scripture, reflection, and prayer.</p>
-  <div class="links">
-    <a href="privacy">Privacy Policy (iOS)</a>
-    <a href="privacy-android">Privacy Policy (Android)</a>
-    <a href="terms">Terms of Service</a>
-    <a href="community-guidelines">Community Guidelines</a>
-    <a href="delete-account-android">Delete account (Android)</a>
-  </div>
-  <p class="subtle">Questions? Contact <a href="mailto:thealtarapp@gmail.com">thealtarapp@gmail.com</a></p>
+  <p class="eyebrow">Legal</p>
+  <h1>BeBible</h1>
+  <p>A Christian discipline app: it guards the apps you choose behind Scripture, and gives you
+     one shared daily quiet time with a small private circle of friends.</p>
+
+  <h2>iOS — BeBible</h2>
+  <ul>
+    <li><a href="privacy">Privacy Policy</a></li>
+    <li><a href="terms">Terms of Use</a></li>
+  </ul>
+
+  <h2>Android — Altar</h2>
+  <p class="subtle" style="margin-top:6px">The Android app is still published as <strong>Altar</strong>;
+     the rename is rolling out on iOS first.</p>
+  <ul>
+    <li><a href="privacy-android">Privacy Policy (Android)</a></li>
+    <li><a href="terms-android">Terms of Service (Android)</a></li>
+    <li><a href="delete-account-android">Delete your account (Android)</a></li>
+  </ul>
+
+  <h2>Both</h2>
+  <ul>
+    <li><a href="community-guidelines">Community Guidelines</a></li>
+  </ul>
+
+  <p class="subtle">BeBible was previously called Altar — the same app, the same developer,
+     and the same data.<br>
+     Questions? <a href="mailto:thealtarapp@gmail.com">thealtarapp@gmail.com</a></p>
 </body>
 </html>
