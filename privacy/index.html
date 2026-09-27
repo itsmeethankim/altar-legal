@@ -44,59 +44,148 @@
 </style>
 </head>
 <body>
-    <p class="eyebrow">BeBible</p>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated August 14, 2026</p>
-    
-    <p>BeBible (&quot;we&quot;, &quot;our&quot;, &quot;the app&quot;) is a Christian discipline app: it guards the apps you choose behind Scripture, and gives you one shared daily quiet time with a small private circle of friends. This policy explains what information BeBible collects, why, and your choices.</p>
-    <p>BeBible was previously called Altar. It is the same app, the same developer, and the same data — only the name and the interface changed.</p>
-    <h2>The short version</h2>
-    <ul><li>BeBible is local-first. Your core data stays on your device.</li><li>We do not sell your data. We do not track you across apps or the web. We do not run ads.</li><li>The free tier does not require your name, email, phone number, or any contact information.</li><li>Your Screen Time app selections never leave your device.</li><li><strong>The Bible Assistant</strong> is part of a BeBible subscription and requires Sign in with Apple. Apple gives us an opaque per-app identifier (a random UUID) — we never see your real name, email, or Apple ID. We use it to verify your subscription and apply rate limits.</li><li><strong>Circles</strong> are an optional, opt-in community feature. Sign in with Apple is required. Joining a circle is free and unlimited — you can be invited into any number of them and take part in full. Starting your own circle (up to 8 people) is part of a subscription. If you create or join a circle, the check-ins, reactions, and photos you post are visible to invited members of that circle.</li></ul>
-    <h2>What we collect</h2>
-    <h3>On-device only (never leaves your phone)</h3>
-    <ul><li>Your selected blocked apps (Screen Time / Family Controls data).</li><li>Your reflections and intervention history.</li><li>Cached Bible text bundled with the app.</li><li>Settings, streaks, and unlock history.</li><li>OCR&#x27;d passage text from Scan to Unlock.</li><li><strong>Your onboarding answers, including your age.</strong> During setup we ask how old you are, how often you read, what pulls you away, and how long you want to spend each morning. These shape the plan we suggest and nothing else. They are stored on your device and are never uploaded, never attached to your account, and never shared with anyone.</li></ul>
-    <h3>Sign in with Apple identifier</h3>
-    <p>The Bible Assistant and Circles require Sign in with Apple. When you sign in, Apple gives us an opaque user identifier (a random UUID specific to this app and your Apple ID), and — at your choice — your name and a relay email address. We use these only to:</p>
-    <ul><li>Verify your active BeBible subscription before granting access to Pro features.</li><li>Apply per-user rate limits to the Bible Assistant so the feature stays affordable.</li><li>Identify you to other members of any Circle you join (display name only).</li><li>Maintain your authenticated session.</li><li>Honor Apple Guideline 5.1.1(v) account deletion (your profile → Account → Delete account).</li></ul>
-    <p>We never see your Apple ID, your Apple ID password, or any contact information beyond the relay email you choose to share. Email addresses are never shown to other members and are never used for marketing.</p>
-    <h3>Anonymous baseline session</h3>
-    <p>Before you&#x27;ve signed in with Apple, the app may create an anonymous Supabase session for connectivity. The anonymous session does not store identifying information and cannot be used to access the Bible Assistant or Circles — those features explicitly require Sign in with Apple. If you reinstall the app, any prior anonymous session is unrecoverable.</p>
-    <h3>Purchase records</h3>
-    <p>If you buy a subscription, Apple processes the transaction. BeBible receives only an anonymous entitlement status (premium on/off) from Apple&#x27;s StoreKit — we never see your payment details.</p>
-    <h3>Bible Assistant and Scan-to-Unlock (AI features)</h3>
-    <p>The Bible Assistant and the Scan-to-Unlock devotional generator are subscription features. They require Sign in with Apple and an active BeBible subscription to use.</p>
-    <p><strong>Your explicit consent is required before any AI request leaves the device.</strong> The first time you tap a Bible Assistant button (or trigger the Scan-to-Unlock devotional), a primer sheet describes what will be sent and to whom and asks you to allow AI assistance. Per Apple App Review guideline 5.1.2(i), this consent is opt-in and revocable: you can turn AI assistance off at any time in <strong>your profile → Account → Privacy → AI assistance</strong>. While AI assistance is off, these features fall back to local offline responses and nothing is transmitted to OpenAI.</p>
-    <p>When AI assistance is on and you use these features, your prompt or the OCR&#x27;d Scripture reference is sent to our Supabase Edge Function over HTTPS. The Edge Function uses your Apple-issued opaque identifier to verify your active Pro entitlement and apply per-user rate limits. It records the timestamp of the request (so we can rate-limit abuse); the prompt text itself is not stored server-side. The prompt and passage are forwarded to OpenAI&#x27;s API to generate a response. OpenAI does not see any identifying information about you. Under OpenAI&#x27;s standard API data-usage policy, prompts sent via the API are not used to train OpenAI&#x27;s models. If the Edge Function is unavailable, the Bible Assistant falls back to offline responses that never leave your device.</p>
-    <h3>AI-Generated Content (disclaimer)</h3>
-    <p>Responses from the Bible Assistant and the Scan-to-Unlock devotional generator are produced by a generative AI model and <strong>may be inaccurate, incomplete, or theologically imprecise</strong>. They are not professional spiritual, medical, legal, or financial advice. Always verify Scripture references against a trusted Bible translation and consult your pastor or a qualified mentor for important decisions. BeBible surfaces a similar in-app reminder near the assistant interface.</p>
-    <p>We do not send your personal identifiers, photos, or unrelated app data to OpenAI — only the Scripture reference, OCR&#x27;d passage text, or question you submitted. OpenAI processes those prompts under their standard API policy (<a href="https://openai.com/policies/api-data-usage-policies">https://openai.com/policies/api-data-usage-policies</a>); they do not train on inputs sent through their API.</p>
-    <h3>Circles (optional community feature)</h3>
-    <p>Circles is an opt-in feature for invite-only accountability groups. It is off until you choose to use it. If you create or join a Circle, the following applies:</p>
-    <ul><li><strong>Sign in with Apple is required.</strong> When you sign in, Apple shares an opaque user identifier with us, and — at your choice — your name and a relay email address. We use these only to:</li><li>Identify you to other members of Circles you join (display name only).</li><li>Maintain your authenticated session.</li><li>Honor Apple Guideline 5.1.1(v) account deletion (&quot;Delete account&quot; in your profile → Account).</li><li><strong>Email addresses are never shown to other members</strong> and are not used for marketing.</li><li><strong>What members of your Circle see:</strong> your display name, any check-in text or Scripture passage you post, any photo you attach, and your reactions (&quot;Praying,&quot; &quot;Amen,&quot; &quot;Encouraged,&quot; &quot;Keep Going&quot;) on their check-ins.</li><li><strong>What members do not see:</strong> your email, your Apple ID, your Screen Time selections, your other Circles, or any of your private reflections from the rest of the app.</li><li><strong>Reports and blocks:</strong> if you report a check-in, only BeBible (the app, via automated rules and the Circle&#x27;s RLS policies) sees the report — the author is not notified. Two distinct reports auto-hide a check-in pending review. If you block another user, neither of you can see the other&#x27;s check-ins, reactions, or profile in any shared Circle. The blocked user is not notified.</li><li><strong>Retention:</strong> you can delete any check-in you authored at any time; this also removes the photo from storage. Leaving a Circle hides your historical content from that Circle. Disbanding a Circle (owner only) cascade-deletes every member&#x27;s check-ins, reactions, and reports for that Circle. Deleting your account through your profile → Account removes all of your check-ins, reactions, reports, profile row, and block list.</li><li><strong>No third-party sharing.</strong> Circle content stays on BeBible&#x27;s Supabase backend. It is not shared with OpenAI or any other third party.</li></ul>
-    <h3>What we do NOT collect</h3>
-    <ul><li>Your real name, email address, phone number, or contact information unless you sign in with Apple to use Circles.</li><li>Your Apple ID password or any sign-in token beyond the short-lived session Apple gives us during Sign in with Apple.</li><li>Which specific apps you have blocked.</li><li>Photos or camera content from outside Circles. (Camera frames captured by Scan to Unlock are processed in-memory and not retained.)</li><li>Location.</li><li>Any cross-device sync or cloud backup of your private spiritual data unless you opt in to Cloud Sync.</li></ul>
-    <h2>How we use your information</h2>
-    <ul><li>To run the app&#x27;s core features (interventions, streaks, reading plans).</li><li>To verify your subscription before granting access to paid features (starting your own circle, Scan to Unlock and the Bible Assistant), and to confirm that joining a circle, posting in it and guarding your apps stay free.</li><li>To rate-limit the AI Bible Assistant fairly across paying users (per-Apple-identifier and per-IP).</li><li>To improve the app&#x27;s reliability by aggregating anonymous crash and error data (iOS system-level only — we do not run third-party analytics SDKs).</li></ul>
-    <h3>Product analytics (opt-out)</h3>
-    <p>To help us see where the onboarding or paywall trips people up, BeBible sends anonymous product-interaction events (for example: which onboarding step you reached, that a paywall was viewed, an intervention was completed, an exit-survey reason was selected) to our own Supabase backend. This is <strong>on by default</strong> and can be turned off at any time in <strong>your profile → Account → Privacy → &quot;Help improve BeBible.&quot;</strong> The mirror is first-party — the same Supabase backend that already powers Circles and cloud sync. We do not use PostHog, Mixpanel, Amplitude, or any other third-party analytics SDK.</p>
-    <ul><li>We never send the text of your reflections, prayers, scans, journal entries, or Circle posts through this channel.</li><li>Events are grouped by a random UUID we generate on first launch and store on-device (the &quot;install identifier&quot;). Before you sign in with Apple, that install identifier is the only way we can group your events. It does not contain your name or email.</li><li>Once you sign in with Apple, events are also stored against your Apple-issued opaque identifier (the same UUID we already use for entitlements).</li><li>Events older than 90 days are purged.</li><li>Turning it off stops new events immediately. To remove your previously-recorded events, use <strong>Settings → Account → Delete Account</strong>, which cascades to every server-side row tied to your identifier.</li></ul>
-    <h2>How we protect your information</h2>
-    <ul><li>All network traffic uses HTTPS/TLS.</li><li>The Apple-issued user identifier we use for backend auth is opaque and does not contain your name or email.</li><li>Per-IP and per-user rate limits prevent abuse of the AI backend.</li><li>On-device data is stored via Apple&#x27;s SwiftData framework, encrypted by iOS at rest.</li></ul>
-    <h2>Data transfer when you upgrade your phone</h2>
-    <p>When you transfer to a new iPhone via Quick Start, iCloud Backup, or an encrypted local backup, BeBible&#x27;s on-device data (history, reflections, settings, reading-plan progress) is included in the standard iOS migration and carries over automatically. If you set up your new phone &quot;as new&quot; without restoring a backup, that data does not transfer because BeBible does not sync to the cloud.</p>
-    <h2>Your choices</h2>
-    <ul><li><strong>Reset all app data</strong> in Settings → Account → About → Reset All App Data. This erases every reflection, scan, and setting on this device.</li><li><strong>Revoke Screen Time access</strong> in iOS Settings → Screen Time → Family Controls. BeBible will continue to work with a limited feature set.</li><li><strong>Revoke camera access</strong> in iOS Settings → Privacy → Camera. Scan to Unlock will be unavailable.</li><li><strong>Leave or disband a Circle</strong> — leaving hides your content from that Circle; disbanding (owner only) deletes the Circle and all its content for everyone.</li><li><strong>Block another member</strong> in any Circle from the check-in card menu, or manage your block list in Settings → Circles → Blocked Members.</li><li><strong>Delete your account</strong> in Settings → Account → Delete Account. This permanently removes your Circles content, profile, block list, and authenticated session, then signs you out.</li><li><strong>Delete the app</strong> to remove all on-device data. If you have used Circles, also use Delete Account first so your Circles content is removed from the server.</li></ul>
-    <h2>Children</h2>
-    <p>BeBible is not directed at children under 13 and does not knowingly collect information from them.</p>
-    <p>During onboarding we ask your age so we can suggest a realistic daily plan. That answer stays on your device — it is not uploaded, not stored on our servers, and not used to build a profile of you. We do not use it to target advertising, because BeBible contains no advertising of any kind.</p>
-    <h2>Third parties</h2>
-    <ul><li><strong>Supabase</strong> (backend): hosts our Edge Functions (Bible Assistant, entitlement verification, push fan-out for Circles) and stores Circles content (check-ins, reactions, reports, photos) for users who opt in. Receives your Apple-issued opaque user identifier and request timestamps whenever you use an a BeBible subscription server feature. For Circles, additionally receives your chosen display name and the content you post. See supabase.com/privacy.</li><li><strong>OpenAI</strong> (via our Edge Function): processes Bible Assistant and Scan-to-Unlock devotional prompts when those features are used. Receives only the prompt content, not your identity. See openai.com/policies/privacy-policy.</li><li><strong>RevenueCat</strong> (subscription state): receives your Apple-issued opaque user identifier so we can verify your active BeBible subscription on the backend. Does not see your name, email, or Apple ID password. See revenuecat.com/privacy.</li><li><strong>Apple</strong> (Sign in with Apple, StoreKit): handles authentication for subscription features (Bible Assistant, Circles) and processes purchases. We receive only the opaque Apple user identifier and, if you choose to share them, a relay email and your chosen name.</li></ul>
-    <h2>Changes</h2>
-    <p>We will update this policy as the app evolves. The &quot;Last updated&quot; date at the top reflects the most recent version.</p>
-    <h2>Contact</h2>
-    <p>Questions? Email <strong><a href="mailto:thealtarapp@gmail.com">thealtarapp@gmail.com</a></strong>.</p>
+  <p class="eyebrow">BeBible</p>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated August 27, 2026</p>
+
+  <p>BeBible (&quot;we&quot;, &quot;our&quot;, or &quot;the app&quot;) helps you build a daily Scripture habit, guard selected apps with Apple&#x27;s Screen Time tools, and share a daily photo and reflection with private, invite-only Groups. This policy explains the information the app handles, why it is used, where it is stored, and the choices available to you.</p>
+  <p>BeBible was previously called Altar. It is the same app and developer under a new name.</p>
+
+  <h2>The short version</h2>
+  <ul>
+    <li>We do not sell personal information, run ads, or track you across other companies&#x27; apps or websites.</li>
+    <li>Your Screen Time selections, Hard Block Mode schedule, daily streak, onboarding age band, and private scan history stay on your device.</li>
+    <li>Sign in with Apple is required for Groups. Group posts, photos, comments, replies, membership, reports, and blocks use our Supabase and Cloudflare services.</li>
+    <li>Successful post photos can be saved locally for Memories and, with your permission, to a named <strong>BeBible Photos</strong> album. Feed copies in Cloudflare R2 are temporary.</li>
+    <li>Optional product analytics are on by default, contain only an approved set of interaction and app-context fields, and can be turned off in the app.</li>
+    <li>Optional AI-assisted Scripture features send text—not camera images—to OpenAI only after you turn on <strong>Scan processing</strong> in the app&#x27;s Privacy settings.</li>
+  </ul>
+
+  <h2>Information kept on your device</h2>
+  <h3>Screen Time and Hard Block Mode</h3>
+  <p>Your selected applications, categories, and web domains are represented by Apple Family Controls tokens. BeBible stores those tokens in its private App Group so the app and its Screen Time extensions can apply the shields you request. The selection is not uploaded to BeBible, Supabase, RevenueCat, Cloudflare, or OpenAI. Hard Block Mode schedules, temporary unlock state, and related settings also stay on the device and are handled through Apple&#x27;s Family Controls, Managed Settings, and Device Activity frameworks.</p>
+
+  <h3>Local spiritual and app data</h3>
+  <ul>
+    <li>Onboarding choices such as your first name, age band, and whether you chose the social or solo path. These stay local, except that the name you entered may be used as your Group display name if you later sign in. Your estimated daily screen hours are used during onboarding to calculate setup illustrations but are not retained after setup.</li>
+    <li>Your daily open-app streak and the date it last advanced.</li>
+    <li>Your settings, reading-plan progress, intervention history, scan history, unlock history, reflections, and locally bundled Bible text. Cloud Sync for this private data is not enabled in the current release.</li>
+    <li>Camera images and recognized text while Scan to Unlock is processing. Camera images are processed in memory and are not uploaded as part of the scan flow.</li>
+    <li>Successful Group captures used by local Memories. These include the two captured photos and their local metadata.</li>
+  </ul>
+
+  <h3>Pending post retries</h3>
+  <p>If a Group post cannot finish while its Group day is still active, its two compressed photos and a small retry record may remain in app-private storage. They do not appear in Memories or the BeBible Photos album until the server confirms a post. An expired retry is hidden and is removed after the app can confirm that no post was accepted; an ambiguous offline retry may remain privately until the next reconciliation. These retry files are excluded from device backups.</p>
+
+  <h2>Accounts and authentication</h2>
+  <h3>Anonymous Supabase session</h3>
+  <p>Before Sign in with Apple, BeBible may create an anonymous Supabase authentication session. It has a random backend user identifier and does not contain your Apple identity. It supports authenticated connectivity, rate limiting, and pre-sign-in product analytics. Reinstalling the app may create a different anonymous identifier.</p>
+
+  <h3>Sign in with Apple</h3>
+  <p>When you use Groups, Sign in with Apple gives Supabase an app-specific identifier. Apple may also provide your name and either your email address or an Apple relay email, depending on your choices and what Apple has already shared for this app. BeBible uses the account to maintain your session, save your display name, authorize Group access, connect subscription status, apply abuse limits, deliver notifications, and support account deletion. Group members see your display name, not your email address or Apple account identifier. We never receive your Apple password.</p>
+
+  <h3>Purchases and entitlements</h3>
+  <p>Apple processes purchases and payment information. RevenueCat receives purchase and entitlement information from Apple and is linked to your BeBible backend user identifier after you sign in. BeBible and Supabase store the resulting entitlement status, expiration information, environment, update time, and RevenueCat app-user identifiers so paid access can be enforced consistently. We do not receive your full card or bank details.</p>
+
+  <h2>Private Groups</h2>
+  <p>Groups are invite-only. Free members may belong to one Group total or create one four-person referral Group. Premium members may belong to or create up to ten Groups, and a Premium-owned Group can hold up to 50 members. If a free referral Group is permanently upgraded, that capacity remains available as described in the app.</p>
+  <p>When you create, join, or use a Group, we store:</p>
+  <ul>
+    <li>Your display-name profile and Community Guidelines acceptance.</li>
+    <li>Group name, owner, members, join times, invite code, time zone, access basis, and capacity.</li>
+    <li>For each successful post: author, Group, capture and post identifiers, capture time, local and Group day, optional Scripture reference and text, caption, reflection, picture-in-picture position, and the two photos.</li>
+    <li>Comments and one-level replies, including author, body, parent relationship, and creation time. Comments and replies are final after posting but can be deleted by their author.</li>
+    <li>Blocks, and reports that may include a reason and optional details.</li>
+    <li>Rate-limit counters used to protect feed, post, comment, report, and account actions from abuse.</li>
+  </ul>
+  <p>Members of the same Group can see its roster and each other&#x27;s display names. After posting for that Group&#x27;s current day, a member can see the day&#x27;s visible posts, photos, shared Scripture and reflection content, comments, and replies. Members cannot see your email, Apple account identifier, Screen Time selections, other Groups, private local history, or content hidden by a block or report rule.</p>
+
+  <h3>Reports and blocks</h3>
+  <p>Reporting a post, comment, or reply hides it for the reporter. Reports from two distinct members hide the content from the Group pending review. The reported author is not notified. Blocking prevents both people from seeing each other&#x27;s posts, comments, replies, profiles, and related notifications in shared Groups; factual membership may remain visible to Group owners for management. The blocked person is not notified.</p>
+
+  <h3>Group ownership and leaving</h3>
+  <p>Leaving a Group removes your access but does not delete the posts and comments you previously shared there; remaining members retain access according to the normal Group rules. If an owner leaves a Group with other members, ownership transfers to the earliest remaining member. If the last member leaves, the Group and its related server content are deleted. Removing a member has the same access effect as leaving.</p>
+
+  <h2>Photo storage and Memories</h2>
+  <ul>
+    <li><strong>Cloudflare R2:</strong> the two JPEGs for a Group post are uploaded to private object storage under a random capture identifier. Upload links expire after about 15 minutes and authorized feed-download links after about two minutes. A bucket lifecycle rule deletes objects after one day; because lifecycle cleanup is periodic, actual deletion can occur roughly 24–48 hours after upload.</li>
+    <li><strong>App-private Memories:</strong> after at least one post is confirmed, BeBible keeps the captured pair and its local record on your device so it can appear in Memories. Other members&#x27; current-day feed images may be cached locally and are cleared when the Group day changes.</li>
+    <li><strong>BeBible Photos album:</strong> if you grant full Photos read/write access, BeBible creates or finds an album named <strong>BeBible Photos</strong> and saves each confirmed pair with filenames containing the capture identifier. BeBible limits its recovery work to exact albums with that name and matching filenames; it does not use this feature to scan unrelated albums.</li>
+  </ul>
+  <p>Deleting a post removes its server capture and every per-Group post and thread attached to that capture. BeBible also requests deletion of its R2 objects, app-private files, cached copies, and matching BeBible Photos assets. R2 cleanup is best effort because the lifecycle rule is the final deletion boundary. Photos cleanup requires current permission and Apple&#x27;s confirmation; if it cannot complete, an album copy may remain on your device, but BeBible ignores it when no matching server post exists. Deleting your account does not delete recovery copies already saved in Apple Photos.</p>
+
+  <h2>Notifications</h2>
+  <p>If you allow notifications, Apple gives BeBible an APNs device token. We store the token with your backend user identifier, platform, app environment, bundle identifier, and last-seen time so we can send Group post, comment, and reply alerts and route a tap to the related content. Notification delivery goes through Apple Push Notification service. Tokens are removed when you sign out or delete your account when that cleanup can be completed; Apple may rotate or invalidate them independently. BeBible also schedules selected reminders locally on your device.</p>
+
+  <h2>AI-assisted Scripture features</h2>
+  <p>Scan to Unlock first processes the camera image on your device with Apple Vision OCR. It then compares the recognized words with Bible text bundled in the app. <strong>The camera image itself is not sent to Supabase or OpenAI.</strong> When on-device matching cannot confidently identify the page, the optional AI identification fallback may send the recognized OCR text to our Supabase Edge Function and then to OpenAI.</p>
+  <p>Other optional AI requests use text only:</p>
+  <ul>
+    <li>The devotional generator sends the confirmed Scripture reference. For a manually typed passage, this is the reference you typed.</li>
+    <li>The Bible Assistant sends the question you type and may include the confirmed Scripture reference and the recognized verse text currently shown in the scan flow.</li>
+    <li>Your written reflection is not included in these AI requests. A devotional generated by OpenAI may be saved locally as the scan reflection if you do not write your own, but it is not sent back to OpenAI as reflection input.</li>
+    <li>The current scan interface does not attach your name, email, backend user identifier, location, Screen Time selections, Group content, or onboarding age band to the OpenAI payload.</li>
+  </ul>
+  <p><strong>Consent defaults to off.</strong> The current scan flow does not interrupt the camera with a separate AI warning. Instead, the explicit consent control is the <strong>Profile → Account → Privacy → Scan processing</strong> toggle, whose label explains that scanned text is sent to OpenAI. This one toggle controls all AI-assisted Scripture features, including the Bible Assistant. The choice is stored for the device and currently remains in effect if you sign out or change accounts on that device. You can turn it off at any time. While it is off, OCR, passage matching, and fallback devotional responses remain on the device, and BeBible does not make an OpenAI request. AI Assistant access is also hidden while consent is off.</p>
+  <p>When consent is on and you use an eligible AI feature, Supabase verifies your signed-in account and Premium entitlement, applies per-user, per-IP, and global limits, and forwards the permitted text to OpenAI&#x27;s <code>/v1/chat/completions</code> API. Supabase stores your backend account identifier, request time, prompt character count, and status in an assistant request log; it does not store the prompt body in that table. Those account-linked request rows are deleted when the account is deleted. A separate abuse-control table stores the source IP address, rolling request count, window start, and last-request time. Its count resets after a 24-hour window, but the database currently has no automatic schedule that deletes the IP row.</p>
+  <p>OpenAI may retain API prompts and responses in abuse-monitoring logs for up to 30 days, unless longer retention is required by law or is reasonably necessary to protect OpenAI&#x27;s services, users, or third parties from harm. OpenAI states that API inputs and outputs are not used to train its models by default unless the API account owner explicitly opts in to data sharing. BeBible does not request persistent Chat Completions application state. See <a href="https://platform.openai.com/docs/guides/your-data">OpenAI API data controls</a>.</p>
+  <p>OpenAI returns generated text to BeBible. AI responses may be inaccurate or theologically imprecise and are not professional spiritual, medical, legal, or financial advice. If you choose <strong>Report</strong> on an AI response, BeBible opens your email app with a portion of that response and space for your explanation; sending the email is your choice and is then handled by your email provider.</p>
+
+  <h2>Product analytics</h2>
+  <p>BeBible sends a limited set of product-interaction events to its own Supabase backend so we can understand onboarding, paywall, Screen Time, scan, subscription, Group, social, Memories, and Hard Block Mode flows. Analytics are on by default and can be disabled under <strong>Profile → Account → Privacy → Help improve BeBible</strong>.</p>
+  <p>Analytics may include an event name, approved scalar properties such as a step or action category, event time, a random install identifier, a per-launch identifier, app version, build number, platform, environment, and whether Premium was active. After sign-in, the event is also associated with your Supabase user identifier. The analytics boundary rejects unapproved properties: it does not send invite codes, Group or post identifiers, names, authored posts, comments, reflections, prayers, scanned Scripture text, photos, or Screen Time selections.</p>
+  <p>Events may be queued in app-private storage before upload. Turning analytics off stops new uploads and clears the local queue. Uploaded analytics events are automatically deleted after 90 days. Account deletion removes analytics attached to the signed-in account; pre-sign-in events attached to a separate anonymous session expire under the same 90-day rule.</p>
+
+  <h2>How we use information</h2>
+  <ul>
+    <li>Provide authentication, private Groups, daily posts, comments, replies, Memories, Screen Time guards, Scripture tools, and notifications.</li>
+    <li>Verify purchases and enforce free and Premium Group limits.</li>
+    <li>Prevent abuse, enforce Community Guidelines, and investigate reports.</li>
+    <li>Operate optional AI-assisted features after consent.</li>
+    <li>Understand app reliability and product flows through bounded analytics.</li>
+  </ul>
+
+  <h2>Retention and deletion</h2>
+  <ul>
+    <li>Group rows, capture metadata, posts, comments, replies, membership, and account data remain until the related content, Group, or account is deleted, except where leaving a Group preserves previously shared content for remaining members.</li>
+    <li>R2 feed photos follow the one-day lifecycle described above. Short-lived signed URLs expire much sooner.</li>
+    <li>Analytics events are deleted after 90 days.</li>
+    <li>AI request metadata tied to your account remains until account deletion. IP rate-limit rows currently have no automatic deletion schedule, although their rolling request count resets after 24 hours. OpenAI may retain API inputs and outputs for up to 30 days for abuse monitoring as described above.</li>
+    <li>Limited report records may remain as moderation evidence after the reporter or reported content is deleted. They contain the report type, reason, optional details, reporter identifier, and time—not a retained copy of a deleted photo, post, or comment.</li>
+    <li>Local data remains until you delete it in the app, sign out where applicable, delete the app, or use an applicable iOS data-removal action. Signing out clears local Memories records, their app-private photo pairs, and social caches, but does not delete server posts or copies saved in Apple Photos. Apple Photos copies remain under your control.</li>
+  </ul>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li>Change notification, camera, Photos, and Screen Time permissions in iOS Settings.</li>
+    <li>Turn off product analytics, or turn off all AI-assisted Scripture features using the <strong>Scan processing</strong> toggle, in BeBible&#x27;s Privacy settings.</li>
+    <li>Delete your own post, comment, or reply; block or unblock another member; report content; leave a Group; or remove members when you are the owner.</li>
+    <li>Delete your account under <strong>Profile → Account → Delete account</strong>. This removes the Supabase authentication identity and its linked profile, memberships, posts, comments, blocks, device tokens, entitlements, and other rows that cascade from the account. Owned Groups transfer or close as described above. R2 photos expire under their lifecycle rule, limited report evidence may remain, and Apple Photos copies remain under your control.</li>
+    <li>Delete the app to remove app-private local data. If you used Groups, delete your account first if you also want linked server data removed.</li>
+  </ul>
+
+  <h2>Security</h2>
+  <p>Network requests use HTTPS/TLS. Social database tables use row-level restrictions or service-only access, and feed photos use short-lived signed URLs. iOS protects local app storage according to the device&#x27;s security settings. No method of storage or transmission is completely secure, so we cannot guarantee absolute security.</p>
+
+  <h2>Children</h2>
+  <p>BeBible is not directed to children under 13, and we do not knowingly collect personal information from children under 13. The age-band answer collected during onboarding stays on the device and is not attached to the backend account or used for advertising.</p>
+
+  <h2>Service providers</h2>
+  <ul>
+    <li><strong>Apple:</strong> Sign in with Apple, StoreKit purchases, APNs notifications, Photos, Vision OCR, and Screen Time frameworks. See <a href="https://www.apple.com/legal/privacy/">Apple&#x27;s Privacy Policy</a>.</li>
+    <li><strong>Supabase:</strong> authentication, database, Edge Functions, entitlement mirror, notifications, analytics, and abuse controls. See <a href="https://supabase.com/privacy">Supabase Privacy</a>.</li>
+    <li><strong>Cloudflare:</strong> temporary R2 storage for Group feed photos. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a>.</li>
+    <li><strong>RevenueCat:</strong> subscription products, purchase status, and entitlements. See <a href="https://www.revenuecat.com/privacy/">RevenueCat Privacy Policy</a>.</li>
+    <li><strong>OpenAI:</strong> optional AI-assisted Scripture text processing after consent. See <a href="https://openai.com/policies/privacy-policy/">OpenAI Privacy Policy</a> and <a href="https://platform.openai.com/docs/models/default-usage-policies-by-endpoint">API data controls</a>.</li>
+  </ul>
+
+  <h2>Changes to this policy</h2>
+  <p>We may update this policy as BeBible changes. The date at the top shows the latest revision.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or privacy requests? Email <strong><a href="mailto:thealtarapp@gmail.com">thealtarapp@gmail.com</a></strong>.</p>
     <footer>
-      <p>BeBible was previously called Altar — same app, same developer, same data.</p>
+      <p>BeBible was previously called Altar — the same app and developer under a new name.</p>
       <p>Questions: <a href="mailto:thealtarapp@gmail.com">thealtarapp@gmail.com</a></p>
     </footer>
 </body>
